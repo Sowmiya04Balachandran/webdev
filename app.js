@@ -31,10 +31,10 @@ console.log(document.links);*/
 
 //code
 
-var items=document.getElementsByTagName('h2');
-console.log(items);
-items[0].style.fontWeight='bold';
-items[0].style.color='green';
+//var items=document.getElementsByTagName('h2');
+//console.log(items);
+//items[0].style.fontWeight='bold';
+//items[0].style.color='green';
 //items.style.fontWeight='bold';
 //items.style.="green";
 //.fontWeight='bold';
@@ -46,3 +46,29 @@ console.log(items[1]);
 items[1].textContent='hello';
 items[1].style.fontWeight='bold';
 items[1].style.backgroundColor='yellow';*/
+
+//GETELEMENTSBYNAMES
+
+//var items=document.getElementsByClassName("list-group-item");
+//console.log(items);
+//console.log(items[1]);
+//items[1].textContent='hello';
+//items[1].style.fontWeight='bold';
+//items[1].style.backgroundColor='yellow';
+
+//items.style.backgroundColor='#f4f4f4';
+//for(var i=0;i<items.length;i++)
+//{
+  //  items[i].style.backgroundColor='#f4f4f4';
+//}
+var items=document.getElementsByClassName("list-group-item");
+console.log(items);
+console.log(items[2]);
+items[2].textContent='hello';
+
+items[2].style.backgroundColor='green';
+
+for(var i=0;i<items.length;i++){
+    items[i].style.color='red';
+    items[i].style.fontWeigth='bold';
+}
