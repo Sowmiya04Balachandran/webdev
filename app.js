@@ -61,25 +61,68 @@ items[1].style.backgroundColor='yellow';*/
 //{
   //  items[i].style.backgroundColor='#f4f4f4';
 //}
-var items=document.getElementsByClassName("list-group-item");
-console.log(items);
-console.log(items[2]);
-items[2].textContent='hello';
+//var items=document.getElementsByClassName("list-group-item");
+//console.log(items);
+//console.log(items[2]);
+//items[2].textContent='hello';
 
-items[2].style.backgroundColor='green';
+//items[2].style.backgroundColor='green';
 
-for(var i=0;i<items.length;i++){
-    items[i].style.color='red';
-    items[i].style.fontWeigth='bold';
-}
+//for(var i=0;i<items.length;i++){
+  //  items[i].style.color='red';
+    //items[i].style.fontWeigth='bold';
+//}
 
 //getelementbytagname
-var li=document.getElementsByTagName('li-item');
-console.log(li);
-console.log(li[2]);
-for(var i=0;i<li.length;i++){
-  li[i].style.color='#f4f4f4';
-  li[i].style.fontWeight='bold';
+//var li=document.getElementsByTagName('li-item');
+//console.log(li);
+//console.log(li[2]);
+//for(var i=0;i<li.length;i++){
+  //li[i].style.color='#f4f4f4';
+  //li[i].style.fontWeight='bold';
+//}
+
+
+//queryselector
+
+//var header=document.querySelector('#main-header');
+//header.style.borderBottom='solid 4px #ccc';
+
+//var input=document.querySelector('input');
+//input.value='Hello world';
+
+//var submit=document.querySelector('input[type="submit"]');
+//submit.value='send';
+
+//var items=document.querySelector('.list-group-item');
+//items.style.color='red';
+
+//var lastItem=document.querySelector('.list-group-item:last-child');
+//lastItem.style.color='blue';
+
+var secondItem=document.querySelector('.list-group-item:nth-child(2)');
+secondItem.style.backgroundColor='green';
+var thirdItem=document.querySelector('.list-group-item:nth-child(3)');
+thirdItem.style.visibility='hidden';
+
+var seconfontitem=document.querySelectorAll('.list-group-item:nth-Child(2)');
+secondfontitem.style.color='green';
+
+//var odd=document.querySelectorAll('li:nth-child(odd)');
+//for(var i=0;i<odd.length;i++){
+  //odd[i].style.backgroundColor='green';
+//}
+
+//queryselectorall
+
+//var titles=document.querySelectorAll('.title');
+//titles[0].textContent='hello';
+// css selector
+var odd=document.querySelectorAll('li:nth-child(odd)');
+//var even=document.querySelectorAll('li:nth-child(even)');
+for(var i=0;i<odd.length;i++){
+  odd[i].style.backgroundColor='#f4f4f4';
+  //even[i].style.backgroundColor='#ccc';
 }
 
 
