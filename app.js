@@ -100,13 +100,13 @@ items[1].style.backgroundColor='yellow';*/
 //var lastItem=document.querySelector('.list-group-item:last-child');
 //lastItem.style.color='blue';
 
-var secondItem=document.querySelector('.list-group-item:nth-child(2)');
-secondItem.style.backgroundColor='green';
-var thirdItem=document.querySelector('.list-group-item:nth-child(3)');
-thirdItem.style.visibility='hidden';
+//var secondItem=document.querySelector('.list-group-item:nth-child(2)');
+//secondItem.style.backgroundColor='green';
+//var thirdItem=document.querySelector('.list-group-item:nth-child(3)');
+//thirdItem.style.visibility='hidden';
 
-var seconfontitem=document.querySelectorAll('.list-group-item:nth-Child(2)');
-secondfontitem.style.color='green';
+//var seconfontitem=document.querySelectorAll('.list-group-item:nth-Child(2)');
+//secondfontitem.style.color='green';
 
 //var odd=document.querySelectorAll('li:nth-child(odd)');
 //for(var i=0;i<odd.length;i++){
@@ -118,12 +118,93 @@ secondfontitem.style.color='green';
 //var titles=document.querySelectorAll('.title');
 //titles[0].textContent='hello';
 // css selector
-var odd=document.querySelectorAll('li:nth-child(odd)');
+//var odd=document.querySelectorAll('li:nth-child(odd)');
 //var even=document.querySelectorAll('li:nth-child(even)');
-for(var i=0;i<odd.length;i++){
-  odd[i].style.backgroundColor='#f4f4f4';
+//for(var i=0;i<odd.length;i++){
+  //odd[i].style.backgroundColor='#f4f4f4';
   //even[i].style.backgroundColor='#ccc';
-}
+//}
+
+//  traversing the dom//
+
+//var itemList=document.querySelector('#items');
+//parent node property
+//console.log(itemList.parentNode);
+//itemList.parentNode.style.backgroundColor='#f4f4f4';
+//console.log(itemList.parentNode.parentNode);
+
+//paraentElement
+//console.log(itemList.parentElement);
+//itemList.parentElement.style.backgroundColor='#f4f4f4';
+//console.log(itemList.parentElement.parentElement);
+
+//ChildNodes
+//console.log(itemList.childNodes);
+
+//children
+//console.log(itemList.children);
+//console.log(itemList.children[1]);
+//itemList.children[1].style.backgroundColor='yellow';
+
+//first child
+//console.log(itemList.firstChild);
+
+//firstElementChild
+//console.log(itemList.firstElementChild);
+//itemList.firstElementChild.textContent='hello 1S';
+
+//lastChild
+//console.log(itemList.lastChild);
 
 
+//lastElementChild
+//console.log(itemList.lastElementChild);
+//itemList.lastElementChild.textContent='hi';
 
+//nextsibiling
+
+//console.log(itemList.nextSibling);
+
+//nextElementSibling
+//console.log(itemList.nextElementSibling);
+
+//previvsiousSibling
+//console.log(itemList.previousSibling);
+
+//previousElementSibling
+//console.log(itemList.previousElementSibling);
+//itemList.previousElementSibling.style.color='green';
+
+//create element
+//createElementmethod
+var newDiv=document.createElement('div');
+//add class
+newDiv.className='hello;'
+//addid
+newDiv.id='hello1';
+
+//add atribute
+newDiv.setAttribute('title','Hello Div');
+
+//create text node
+var NewDivText=document.createTextNode('hello World');
+
+//add text to div
+newDiv.appendChild(NewDivText);
+
+//
+var container=document.querySelector('header .container');
+var h1=document.querySelector('header h1');
+
+
+console.log(newDiv);
+newDiv.style.fontSize='30px';
+container.insertBefore(newDiv, h1);
+
+var newlist=document.createElement('li');
+console.log(newlist);
+var NewlistText=document.createTextNode('hello Word');
+newlist.appendChild(NewlistText);
+var item=document.querySelector('header.container');
+var li=document.querySelector('.list-group-item:nth-child(1)');
+item.insertBefore(newlist,li)
