@@ -72,3 +72,15 @@ for(var i=0;i<items.length;i++){
     items[i].style.color='red';
     items[i].style.fontWeigth='bold';
 }
+
+//getelementbytagname
+var li=document.getElementsByTagName('li-item');
+console.log(li);
+console.log(li[2]);
+for(var i=0;i<li.length;i++){
+  li[i].style.color='#f4f4f4';
+  li[i].style.fontWeight='bold';
+}
+
+
+
