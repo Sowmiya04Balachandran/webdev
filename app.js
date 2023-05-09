@@ -225,6 +225,7 @@ function addItem(e){
 
   // Get input value
   var newItem = document.getElementById('item').value;
+  var sec=document.getElementById('discreption').value;
 
   // Create new li element
   var li = document.createElement('li');
@@ -232,19 +233,22 @@ function addItem(e){
   li.className = 'list-group-item';
   // Add text node with input value
   li.appendChild(document.createTextNode(newItem));
+  li.appendChild(document.createTextNode(sec));
 
   // Create del button element
   var deleteBtn = document.createElement('button');
-
+  var editbtn=document.createElement('button');
   // Add classes to del button
   deleteBtn.className = 'btn btn-danger btn-sm float-right delete';
+  editbtn.className='btn btn-success btn-sm float-right edit';
 
   // Append text node
   deleteBtn.appendChild(document.createTextNode('X'));
+  editbtn.appendChild(document.createTextNode('Edit'));
 
   // Append button to li
   li.appendChild(deleteBtn);
-
+  li.appendChild(editbtn);
   // Append li to list
   itemList.appendChild(li);
   
@@ -269,10 +273,15 @@ function filterItems(e){
   // Convert to an array
   Array.from(items).forEach(function(item){
     var itemName = item.firstChild.textContent;
-    if(itemName.toLowerCase().indexOf(text) != -1){
+    var newName=item.childNodes[1].textContent;
+    if(itemName.toLowerCase().indexOf(text) != -1 || newName.toLowerCase().indexOf(text) !=-1){
       item.style.display = 'block';
     } else {
       item.style.display = 'none';
     }
   });
+  
+
+   
 }
+
