@@ -24,9 +24,16 @@
                 const name=event.target.username.value;
                 const email=event.target.emailid.value;
                 const password=event.target.password.value;
-                localStorage.setItem('name' ,name);
+                localStorage.setItem('name',name);
                 localStorage.setItem('email',email);
                 localStorage.setItem('password',password);
+                const obj={
+                name,
+                email,
+                password
+                }
+                localStorage.setItem('userdetails',JSON.stringify(obj));
+
             }
 
             </script>
