@@ -18,23 +18,32 @@
           <input type="text" name="password" required/> <br><br>
           <button> Submit</button>
         </form>
+        <ul id="listOfitems"></ul>
         <script>
             function  saveToLocalStorage(event){
                 event.preventDefault();
                 const name=event.target.username.value;
                 const email=event.target.emailid.value;
                 const password=event.target.password.value;
-                localStorage.setItem('name',name);
-                localStorage.setItem('email',email);
-                localStorage.setItem('password',password);
+                //localStorage.setItem('name',name);
+                //localStorage.setItem('email',email);
+                //localStorage.setItem('password',password);
                 const obj={
                 name,
                 email,
                 password
                 }
-                localStorage.setItem('userdetails',JSON.stringify(obj));
+                localStorage.setItem(obj.email,JSON.stringify(obj));
+                showUserOnScreen(obj)
 
             }
+            function showUserOnScreen(obj){
+                const parentElem=document.getElementById('listOfitems');
+                const childElem=document.createElement('li');
+                childElem.textContent=obj.name + ' - ' + obj.email + ' - ' + obj.password;
+                parentElem.appendChild(childElem);
+            }
+
 
             </script>
     </body>
