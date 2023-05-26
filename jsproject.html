@@ -84,19 +84,6 @@ function showuseronscreen(obj)
     parent.appendChild(li);
     
 }
-window.onbeforeunload = function() {
-    localStorage.setItem("amount", $('#inputAmount').val());
-    localStorage.setItem("description", $('#inputDescription').val());
-    localStorage.setItem("category", $('#inputcategory').val());
-   
-}
-window.onload = function() {
-
-    var amount = localStorage.getItem("amount");
-    if (amount !== null) $('#inputAmount').val("amuont");
-
-    // ...
-}
 
    
 
