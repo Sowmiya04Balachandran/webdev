@@ -83,6 +83,15 @@ window.addEventListener("DOMContentLoaded",() => {
                })
 })
 
+function editUserDetail(emailid,name,phonenumber,userId)
+{
+    document.getElementById('usernameid').value=name; 
+       document.getElementById('emailid').value=emailid;
+       document.getElementById('phonenumberid').value=phonenumber;
+
+       deleteUser(userId);
+
+}
 
 
 
