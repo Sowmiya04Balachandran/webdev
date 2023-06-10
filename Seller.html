@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>seller</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Selling Details</h1>
+  
+  
+  <label for="price">Selling Price:</label>
+  <input type="number" id="price"><br><br>
+  
+  <label for="name">Product Name:</label>
+  <input type="text" id="product"><br><br>
+
+  <label for="table">Select a category:</label>
+  <select id="table">
+    <option value="table1">Electronic item</option>
+    <option value="table2">Food Items </option>
+    <option value="table3">Skincare Items </option>
+  </select>
+  <br><br>
+  
+  
+  <button onclick="reserveTable()">Add Product</button>
+  
+  <h2>Electronic item</h2>
+  <table id="table1"></table>
+  
+  <h2>food Item</h2>
+  <table id="table2"></table>
+  
+  <h2>Skincare Items</h2>
+  <table id="table3"></table>
+  
+  <script>
+    function reserveTable() {
+      var tableSelect = document.getElementById("table");
+      var selectedTable = tableSelect.value;
+      
+      var nameInput = document.getElementById("price");
+      var name = nameInput.value;
+      
+      var phoneInput = document.getElementById("product");
+      var phone = phoneInput.value;
+      
+      var table = document.getElementById(selectedTable);
+      var row = table.insertRow(-1);
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3=row.insertCell(2);
+      var cell4 = row.insertCell(3); // New cell for delete button
+    
+      cell1.innerHTML = price;
+      cell2.innerHTML = product;
+      cell3.innerHTML=selectedTable;
+      cell4.innerHTML = "<button onclick='deleteRow(this)'>Delete</button>";
+
+      var reservation = {
+    name: name,
+    phone: phone,
+    table: selectedTable
+  };
+
+  axios.post('https://crudcrud.com/api/d11eb3df28174b8f8bf938480989080d/resturant', reservation)
+    .then(response => {
+      // Handle success, e.g., show a success message
+      console.log('Reservation created successfully:', response.data);
+    })
+    .catch(error => {
+      // Handle error, e.g., show an error message
+      console.error('An error occurred while creating the reservation:', error);
+    });
+    }
+
+      function deleteRow(button) {
+  var row = button.parentNode.parentNode; // Get the parent row of the button
+  row.parentNode.removeChild(row); // Remove the row from the table
+}
+
+//const axios = require('axios');
+
+/*function reserveTable() {
+  var tableSelect = document.getElementById("table");
+  var selectedTable = tableSelect.value;
+
+  var nameInput = document.getElementById("name");
+  var name = nameInput.value;
+
+  var phoneInput = document.getElementById("phone");
+  var phone = phoneInput.value;
+
+  var reservation = {
+    name: name,
+    phone: phone,
+    table: selectedTable
+  };
+
+  axios.post('https://crudcrud.com/api/your-api-endpoint', reservation)
+    .then(response => {
+      // Handle success, e.g., show a success message
+      console.log('Reservation created successfully:', response.data);
+    })
+    .catch(error => {
+      // Handle error, e.g., show an error message
+      console.error('An error occurred while creating the reservation:', error);
+    });
+}*/
+
+
+
+
+
+
+      
+  </script>
+</body>
+</html>
